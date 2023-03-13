@@ -1,1 +1,3 @@
 # rabbitmq-tutorials
+
+Updating readme
