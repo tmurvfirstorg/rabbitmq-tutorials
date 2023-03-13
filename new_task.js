@@ -11,17 +11,18 @@ amqp.connect('amqp://localhost', function(error0, connection) {
       throw error1;
     }
 
-    var exchange = 'logs';
-    var type = 'fanout';
-    var msg = 'Hello logs!';
+    var queue = 'task_queue';
+    var msg = process.argv.slice(2).join(' ') || "Hello World!";
 
-    channel.assertExchange(exchange, type, {
-      durable: false
+    channel.assertQueue(queue, {
+      durable: true
     });
 
-    channel.publish(exchange, "", Buffer.from(msg)); // blank param would be for a specific queue
-
-    console.log(" [x] Sent %s", msg);
+    channel.sendToQueue(queue, Buffer.from(msg), {
+      persistent: true
+    });
+    
+    console.log(" [x] Sent '%s'", msg);
   });
   setTimeout(function() {
     connection.close();
