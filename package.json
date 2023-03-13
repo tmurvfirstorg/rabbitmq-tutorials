@@ -1,0 +1,24 @@
+{
+  "name": "tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmurvv/rabbitmq-tutorials.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmurvv/rabbitmq-tutorials/issues"
+  },
+  "homepage": "https://github.com/tmurvv/rabbitmq-tutorials#readme",
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "prettier": "^2.8.4"
+  }
+}
